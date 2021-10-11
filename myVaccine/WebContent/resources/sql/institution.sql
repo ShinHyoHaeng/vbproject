@@ -49,3 +49,26 @@ select * from tmpInstTBL2;
 create table if not exists tmpInstTBL3 like instTBL;
 delete from tmpInstTBL3;
 select * from tmpInstTBL3;
+
+/* After Trigger */
+create trigger instTRG 
+	after update on bigdata
+	for each row
+select 
+case
+	when (v_vaccine = 'Moderna') then 
+	update instTBL set vac_mdnUse = vac_mdnUse-1
+	else
+	update instTBL set vac_pfzrUse = vac_pfzrUse-1
+end;
+	
+/*
+ * 	오류 발생
+ *	You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'update instTBL set vac_mdnUse = vac_mdnUse-1
+	when (v_vaccine = 'Pfizer') th...' at line 7 
+	
+	You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'update instTBL set vac_mdnUse = vac_mdnUse-1
+	else
+	update instTBL set vac_...' at line 7
+ * 
+ */
