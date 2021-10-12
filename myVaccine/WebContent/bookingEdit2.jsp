@@ -36,7 +36,6 @@
 		    document.getElementById("searchResultEdit").contentDocument.location.reload(true);
 		});
 		
-
 		/* 아이프레임 내 form 값 submit */
 		$("#regButtonEdit").bind('click', function() {
 			$("#searchResultEdit").contents().find("#sendformBtnE").trigger('click');
@@ -44,7 +43,15 @@
 		});
 		
 	});
-	
+	function button_editcancel(){
+		if (confirm("예약 수정을 취소하시겠습니까??") == true){    //확인
+		    document.cancel.action = 'processEditCancel.jsp';
+			document.cancel.submit();
+			alert("수정을 취소하였습니다.");
+		}else{   //취소
+		    return;
+		}
+	}	
 </script>
 
 
@@ -168,8 +175,8 @@
 									<button class="btn bookingBtn" id="regButtonEdit">다음</button>
 								</li>
 								<li class="col-3">
-									<form action = "processEditCancel.jsp" method="post">
-										<button class="btn btn-outline-secondary">취소</button>
+									<form name="cancel" id="cancel" method="post">
+										<button class="btn btn-outline-secondary" onclick="button_editcancel()">취소</button>
 									</form>
 								</li>
 							</ul>

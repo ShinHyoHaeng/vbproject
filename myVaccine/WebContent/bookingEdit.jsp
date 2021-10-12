@@ -12,7 +12,6 @@
 </jsp:include>
 <script type="text/javascript" src="./resources/js/validation.js"></script>
 
-
 <body>
 	<div class="wrapper">
 		<!-- nav 영역(include 디렉티브 태그 이용) -->
@@ -141,7 +140,7 @@
 							<div class="btnArea">
 								<ul class="row justify-content-center">
 									<li class="col-3"><input type="submit" class="btn bookingBtn" value="다음" onclick="checkBooking()"></li>
-									<li class="col-3"><a href="processEditCancel.jsp" class="btn btn-outline-secondary">취소</a></li>
+									<li class="col-3"><a href="processEditcancel1.jsp" class="btn btn-outline-secondary">취소</a></li>
 								</ul>
 							</div>
 							<%

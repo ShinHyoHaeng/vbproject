@@ -29,7 +29,14 @@
 		if(rs != null) rs.close();
 		if(conn != null) conn.close();
 		
-		response.sendRedirect("result2.jsp");
 	%>		
+	<script>
+		if(confirm("예약 수정을 취소하시겠습니까??") == true){
+			location.href = "result2.jsp";
+			alert("수정을 취소하였습니다.");
+		}else{
+			location.href = "bookingEdit.jsp";
+		}
+	</script>
 </body>
 </html>

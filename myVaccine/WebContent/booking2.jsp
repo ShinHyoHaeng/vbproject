@@ -44,7 +44,7 @@
 		
 	});
 	function button_cancel(){
-		if (confirm("정말 취소하시겠습니까??") == true){    //확인
+		if (confirm("예약을 취소하시겠습니까??") == true){    //확인
 		    document.cancel.action = 'processCancel.jsp';
 			document.cancel.submit();
 			alert("예약을 취소하였습니다.");
