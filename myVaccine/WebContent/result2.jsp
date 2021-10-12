@@ -38,7 +38,7 @@ function button_cancel(){
 		<div class="visualArea">
 			<div class="dimArea"></div>
 			<div class="container">
-				<h1 class="move-up">예약 수정</h1>
+				<h1 class="move-up">예약 결과</h1>
 			</div>
 		</div>
 		
